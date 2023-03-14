@@ -1,0 +1,2 @@
+set(project7_MESSAGE_FILES "/home/ros/sms-project7/devel/share/project7/msg/Navigate2DAction.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DActionGoal.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DActionResult.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DActionFeedback.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DGoal.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DResult.msg;/home/ros/sms-project7/devel/share/project7/msg/Navigate2DFeedback.msg")
+set(project7_SERVICE_FILES "")
