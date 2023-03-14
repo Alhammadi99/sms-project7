@@ -8,42 +8,42 @@
 2. Add ROS gitignore file & Readme.md files. 
 
 ```bash
-ros@ubuntu:~/catkin_ws$ git clone https://github.com/online-courses-materials/sms-project7.git
+ros@ubuntu:~$ git clone https://github.com/online-courses-materials/sms-project7.git
 Cloning into 'sms-project7'...
 remote: Enumerating objects: 4, done.
 remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (4/4), 931 bytes | 931.00 KiB/s, done.
-ros@ubuntu:~/catkin_ws$ ls
+ros@ubuntu:~$ ls
 project1_ws  project2_ws  project3_ws  project4_ws  project5_ws  project6_ws  sms-project7
-ros@ubuntu:~/catkin_ws$ cd sms-project7/
-ros@ubuntu:~/catkin_ws/sms-project7$ ls
+ros@ubuntu:~$ cd sms-project7/
+ros@ubuntu:~/sms-project7$ ls
 README.md
-ros@ubuntu:~/catkin_ws/sms-project7$ mkdir src
-ros@ubuntu:~/catkin_ws/sms-project7$ cd src
-ros@ubuntu:~/catkin_ws/sms-project7/src$ catkin_create_pkg project7 roscpp
+ros@ubuntu:~/sms-project7$ mkdir src
+ros@ubuntu:~/sms-project7$ cd src
+ros@ubuntu:~/sms-project7/src$ catkin_create_pkg project7 roscpp
 Created file project7/package.xml
 Created file project7/CMakeLists.txt
 Created folder project7/include/project7
 Created folder project7/src
-Successfully created files in /home/ros/catkin_ws/sms-project7/src/project7. Please adjust the values in package.xml.
-ros@ubuntu:~/catkin_ws/sms-project7$/src$
+Successfully created files in /home/ros/sms-project7/src/project7. Please adjust the values in package.xml.
+ros@ubuntu:~/sms-project7$/src$
 ---------------------------------------------------------------
 UPDATE src FOLDER CPP CODES, package.xml AND C_MAKE FILE (add target information)
 ---------------------------------------------------------------
-ros@ubuntu:~/catkin_ws/sms-project7/src$ cd ..
-ros@ubuntu:~/catkin_ws/sms-project7$ catkin_make
-Base path: /home/ros/catkin_ws/sms-project7
-Source space: /home/ros/catkin_ws/sms-project7/src
-Build space: /home/ros/catkin_ws/sms-project7/build
-Devel space: /home/ros/catkin_ws/sms-project7/devel
-Install space: /home/ros/catkin_ws/sms-project7/install
+ros@ubuntu:~/sms-project7/src$ cd ..
+ros@ubuntu:~/sms-project7$ catkin_make
+Base path: /home/ros/sms-project7
+Source space: /home/ros/sms-project7/src
+Build space: /home/ros/sms-project7/build
+Devel space: /home/ros/sms-project7/devel
+Install space: /home/ros/sms-project7/install
 ####
-#### Running command: "make cmake_check_build_system" in "/home/ros/catkin_ws/sms-project7/build"
+#### Running command: "make cmake_check_build_system" in "/home/ros/sms-project7/build"
 ####
 ####
-#### Running command: "make -j4 -l4" in "/home/ros/catkin_ws/sms-project7/build"
+#### Running command: "make -j4 -l4" in "/home/ros/sms-project7/build"
 ####
 [  0%] Built target sensor_msgs_generate_messages_cpp
 [  0%] Built target _project7_generate_messages_check_deps_Navigate2DAction
@@ -77,12 +77,12 @@ Scanning dependencies of target action_server
 [ 92%] Building CXX object project7/CMakeFiles/action_client.dir/src/action_client.cpp.o
 [ 95%] Building CXX object project7/CMakeFiles/action_server.dir/src/action_server.cpp.o
 [ 95%] Built target project7_generate_messages
-[ 97%] Linking CXX executable /home/ros/catkin_ws/sms-project7/devel/lib/project7/action_server
-[100%] Linking CXX executable /home/ros/catkin_ws/sms-project7/devel/lib/project7/action_client
+[ 97%] Linking CXX executable /home/ros/sms-project7/devel/lib/project7/action_server
+[100%] Linking CXX executable /home/ros/sms-project7/devel/lib/project7/action_client
 [100%] Built target action_server
 [100%] Built target action_client
-ros@ubuntu:~/catkin_ws/sms-project7$ source devel/setup.bash
-ros@ubuntu:~/catkin_ws/sms-project7$ rosmsg list
+ros@ubuntu:~/sms-project7$ source devel/setup.bash
+ros@ubuntu:~/sms-project7$ rosmsg list
 actionlib/TestAction
 actionlib/TestActionFeedback
 actionlib/TestActionGoal
@@ -356,14 +356,14 @@ visualization_msgs/InteractiveMarkerUpdate
 visualization_msgs/Marker
 visualization_msgs/MarkerArray
 visualization_msgs/MenuEntry
-ros@ubuntu:~/catkin_ws/sms-project7$ 
-os@ubuntu:~/catkin_ws/sms-project7$ rosmsg show project7/Navigate2DGoal
+ros@ubuntu:~/sms-project7$ 
+os@ubuntu:~/sms-project7$ rosmsg show project7/Navigate2DGoal
 geometry_msgs/Point point
   float64 x
   float64 y
   float64 z
 
-ros@ubuntu:~/catkin_ws/sms-project7$ rosmsg show project7/Navigate2DAction
+ros@ubuntu:~/sms-project7$ rosmsg show project7/Navigate2DAction
 project7/Navigate2DActionGoal action_goal
   std_msgs/Header header
     uint32 seq
@@ -424,18 +424,18 @@ project7/Navigate2DActionFeedback action_feedback
   project7/Navigate2DFeedback feedback
     float32 distance_to_point
 
-ros@ubuntu:~/catkin_ws/sms-project7$ 
+ros@ubuntu:~/sms-project7$ 
 
 ```
 
 ### Create new Tab for Running Action Server Code
 ```bash
-os@ubuntu:~/catkin_ws/sms-project7$ rostopic list
+os@ubuntu:~/sms-project7$ rostopic list
 /rosout
 /rosout_agg
 
-ros@ubuntu:~/catkin_ws/sms-project7$ source devel/setup.sh 
-ros@ubuntu:~/catkin_ws/sms-project7$ rosrun project7 action_server 
+ros@ubuntu:~/sms-project7$ source devel/setup.sh 
+ros@ubuntu:~/sms-project7$ rosrun project7 action_server 
 
 [ INFO] [1651564982.795467899]: Goal Received
 [ INFO] [1651564982.796024696]: Goal Reached
@@ -448,7 +448,7 @@ ros@ubuntu:~/catkin_ws/sms-project7$ rosrun project7 action_server
 ```
 ### Create new Tab for Running ROS Topic
 ```bash
-ros@ubuntu:~/catkin_ws/sms-project7$ rostopic list
+ros@ubuntu:~/sms-project7$ rostopic list
 /navigate_2d/cancel              <-------
 /navigate_2d/feedback
 /navigate_2d/goal
@@ -461,8 +461,8 @@ ros@ubuntu:~/catkin_ws/sms-project7$ rostopic list
 ```
 ### Create new Tab for Running Action Client Code
 ```bash
-ros@ubuntu:~/catkin_ws/sms-project7$ source devel/setup.sh 
-ros@ubuntu:~/catkin_ws/sms-project7$ rosrun project7 action_client 
+ros@ubuntu:~/sms-project7$ source devel/setup.sh 
+ros@ubuntu:~/sms-project7$ rosrun project7 action_client 
 
 Enter the X-Coordinate: 2
 
@@ -493,9 +493,9 @@ Enter the X-Coordinate:
 
 
 ```bash
-ros@ubuntu:~/catkin_ws/sms-project7$ rostopic echo /ro
+ros@ubuntu:~/sms-project7$ rostopic echo /ro
 /robot_position  /rosout          /rosout_agg      
-ros@ubuntu:~/catkin_ws/sms-project7$ rostopic echo /robot_position 
+ros@ubuntu:~/sms-project7$ rostopic echo /robot_position 
 x: 0.0
 y: 0.0
 z: 0.0
